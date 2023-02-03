@@ -1,0 +1,5 @@
+CREATE TABLE logar (
+	codlog int(11) PRIMARY KEY AUTO_INCREMENT
+	, nome varchar(30)
+	, senha varchar(30)
+) 

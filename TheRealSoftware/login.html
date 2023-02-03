@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<head>
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css">
+
+    <!-- Caracteres especias -->
+    <meta charset="utf-8">
+
+    <title>TRS - Login</title>
+
+    <!-- CSS Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width" />
+    <!-- JS Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+
+        function verifica_campos() {
+            var nome = formlogin.nome.value
+            var senha = formlogin.senha.value
+
+            if (nome == "") {
+                alert("Por favor preencha todos os campos");
+                formlogin.nome.focus();
+                return false;
+            }
+            else if (senha.indexOf(" ") >= 0 || senha == "") {
+                alert("Por favor preencha todos os campos");
+                formlogin.senha.focus();
+                return false;
+            }
+            else {
+                return true;
+            }
+
+        }
+
+    </script>
+
+    <!-- CSS -->
+    <style type="text/css">
+        #Conteudo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        li {
+            letter-spacing: 0.1em;
+            font-size: 2em;
+        }
+
+        #selecionado {
+            color: blue;
+        }
+
+        .btn {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body class="bg-dark text-light">
+    <!-- Menu -->
+    <nav class="form-row navbar navbar-expand-lg navbar-dark text-center" style="background-color: black;">
+        <a class="navbar-brand"><img src="img/TRS.png" alt="imagem do logo da empresa"
+                style="width: 8em; border-radius: 0.5em;" class="img-fluid" /></a>&emsp;&emsp;
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"
+            style="outline: none;">
+            <span class="navbar-toggler-icon" style="outline: none;"></span>
+        </button>
+        <!-- Links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="home.html"><i class="fas fa-home"></i>Home</a>
+                </li>&emsp;&emsp;
+                <li class="nav-item">
+                    <a class="nav-link" href="servico.html"><i class="fas fa-laptop-code"></i>Serviços</a>
+                </li>&emsp;&emsp;
+                <li class="nav-item">
+                    <a class="nav-link" href="contato.html"><i class="fas fa-user-friends"></i>Contato</a>
+                </li>&emsp;&emsp;
+                <li class="nav-item">
+                    <a class="nav-link" href="" id="selecionado"><i class="fas fa-user-alt"></i>Login</a>
+                </li>&emsp;&emsp;
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Conteudo -->
+    <br>
+    <div class="form-row" id="Conteudo">
+        <div class="col-md-4 img-fluid" style=" background-image: url(img/codigos3.png); border-radius: 3em;">
+            <br>
+            <h1 class="text-center" style="background-color: rgba(0, 0, 0, 0.7); border-radius: 1em;"> Login </h1>
+            <br>
+        </div>
+    </div>
+    <br>
+    <form name="formlogin" method="POST" action="login.jsp">
+        <div class="form-row" id="Conteudo">
+            <label class="h1" name="laberro"></label>
+            <div class="col-md-4"><label class="h1">Nome</label>
+                <input type="text" name="nome" class="form-control" maxlength="30" required="required" /></div>
+        </div>
+        <div class="form-row" id="Conteudo">
+            <div class="col-md-4"><label class="h1">Senha</label>
+                <input type="password" name="senha" class="form-control" maxlength="30" required="required" /></div>
+        </div>
+        <br>
+        <div class="form-row" id="Conteudo">
+            <div class=" col-md-4">
+                <input type="submit" value="Entrar" onclick="return verifica_campos()"
+                    class="btn btn-outline-primary col-md-12">
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>
